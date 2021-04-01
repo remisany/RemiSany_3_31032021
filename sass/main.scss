@@ -1,0 +1,89 @@
+/*Reset CSS*/
+html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,iframe,hr,h1,h2,h3,h4,h5,h6{margin:0;padding:0}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}ul{list-style:none}button,input,select{margin:0}html{box-sizing:border-box}*,*::before,*::after{box-sizing:inherit}img,video{height:auto;max-width:100%}iframe{border:0}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}
+
+/*Polices*/
+body {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+}
+
+h1 {
+    font-family: "Shrikhand";
+    font-size: 2rem;
+}
+
+h2,h3,h4,h5,h6 {
+    font-weight: 800;
+    font-size: 1.3rem;
+}
+
+/*Couleurs*/
+$primary: #9356DC;
+$secondary: #FF79DA;
+$tertiary: #99E2D0;
+$grey: #F2F2F2;
+$white: #FFF;
+
+/*Header*/
+#header {
+    padding: .5rem;
+    &__title {
+        text-align: center;
+    }
+}
+
+/*Section location*/
+#location {
+    text-align: center;
+    background-color: darken($grey, 5%);
+    padding: 1rem 0;
+    &__text {
+        font-weight: 500;
+    }
+}
+
+
+/*Section exploration*/
+#exploration {
+    padding: 1.5rem;
+    text-align: center;
+    background-color: $grey;
+    &__title {
+        padding: 0 1rem .5rem 1rem;
+    }
+    &__button {
+        margin-top: 1rem;
+        padding: .8rem;
+        border: none;
+        color: $white;
+        background: linear-gradient(-15deg, $primary, $secondary);
+        border-radius: 2rem;
+    }
+}
+
+/*Section restaurants*/
+#restaurants {
+    padding: 1rem;
+    background-color: $grey;
+}
+
+/*Carte*/
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: $white;
+    border-radius: 1rem;
+    box-shadow: .2rem .2rem darken($grey, 2%); ;
+    &__photo {
+        height: 10rem;
+        object-fit: cover;
+        border-radius: 1rem 1rem 0 0;
+    }
+    &__content {
+        padding: 1rem;
+        &__title {
+            padding-bottom: .3rem;
+        }
+    }
+}
