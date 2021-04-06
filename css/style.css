@@ -52,7 +52,7 @@ td, th {
 
 h1 {
   font-family: "Shrikhand";
-  font-size: 2rem;
+  font-size: 1.6rem;
 }
 
 body {
@@ -61,16 +61,16 @@ body {
 
 /*General*/
 h2, h3, h4, h5, h6 {
-  font-weight: 800;
-  font-size: 1.3rem;
   padding-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 700;
 }
 
 button {
-  font-weight: 500;
-  font-size: 0.9rem;
   border: none;
   box-shadow: 0.2rem 0.2rem #ededed;
+  font-weight: 500;
+  font-size: 0.9rem;
 }
 
 a {
@@ -88,7 +88,7 @@ a {
 /*Section location*/
 #location {
   text-align: center;
-  background-color: #e5e5e5;
+  background-color: #e8e8e8;
   padding: 1rem 0;
 }
 #location__text {
@@ -121,7 +121,8 @@ a {
   flex-direction: column;
 }
 .operation__container__button {
-  padding: 1rem;
+  text-align: start;
+  padding: 1rem 1rem 1rem 4rem;
   margin: 0.5rem 0;
   border-radius: 1rem;
   background-color: #fafafa;
@@ -129,7 +130,7 @@ a {
 
 /*Section restaurants*/
 #restaurants {
-  padding: 1rem;
+  padding: 1.5rem;
   background-color: #F2F2F2;
 }
 
@@ -140,6 +141,7 @@ a {
   background-color: #FFF;
   border-radius: 1rem;
   box-shadow: 0.2rem 0.2rem #ededed;
+  margin: 0.5rem 0;
 }
 .card__photo {
   height: 10rem;
@@ -160,14 +162,33 @@ a {
   padding: 0.9rem;
   background-color: #404040;
 }
-.footer__lien {
+.footer__link {
   color: #FFF;
   padding: 0.1rem;
-  margin: 0.1rem 0;
+  margin: 0.2rem 0;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+.footer__link__one::before, .footer__link__two::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  width: 1rem;
+  height: 1rem;
+  margin: -0.2rem 0.5rem 0 0;
+}
+.footer__link__one::before {
+  background: url("../Images/icons/utensils.svg") center center no-repeat;
+  background-size: 0.7rem;
+}
+.footer__link__two::before {
+  background: url("../Images/icons/hands.svg") center center no-repeat;
+  background-size: 0.9rem;
 }
 .footer__title {
   font-family: "Shrikhand";
   margin-bottom: 0.6rem;
+  font-size: 1rem;
 }
 
 /*# sourceMappingURL=style.css.map */

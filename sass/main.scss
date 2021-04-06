@@ -16,7 +16,7 @@ $white: #FFF;
 
 h1 {
     font-family: "Shrikhand";
-    font-size: 2rem;
+    font-size: 1.6rem;
 }
 
 body {
@@ -25,16 +25,16 @@ body {
 
 /*General*/
 h2,h3,h4,h5,h6 {
-    font-weight: 800;
-    font-size: 1.3rem;
     padding-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 700;
 }
 
 button {
-    font-weight: 500;
-    font-size: .9rem;
     border: none;
     box-shadow: .2rem .2rem darken($grey, 2%);
+    font-weight: 500;
+    font-size: .9rem;
 }
 
 a {
@@ -52,7 +52,7 @@ a {
 /*Section location*/
 #location {
     text-align: center;
-    background-color: darken($grey, 5%);
+    background-color: darken($grey, 4%);
     padding: 1rem 0;
     &__text {
         font-weight: 500;
@@ -84,7 +84,8 @@ a {
         display : flex;
         flex-direction: column;
         &__button {
-            padding: 1rem;
+            text-align: start;
+            padding: 1rem 1rem 1rem 4rem;
             margin: .5rem 0;
             border-radius: 1rem;
             background-color: lighten($grey, 3%);
@@ -94,7 +95,7 @@ a {
 
 /*Section restaurants*/
 #restaurants {
-    padding: 1rem;
+    padding: 1.5rem;
     background-color: $grey;
 }
 
@@ -105,6 +106,7 @@ a {
     background-color: $white;
     border-radius: 1rem;
     box-shadow: .2rem .2rem darken($grey, 2%);
+    margin: .5rem 0;
     &__photo {
         height: 10rem;
         object-fit: cover;
@@ -124,14 +126,32 @@ a {
     flex-direction: column;
     padding: .9rem;
     background-color: darken($grey, 70%);
-    &__lien {
+    &__link {
         color: $white;
         padding: .1rem;
-        margin: .1rem 0;
+        margin: .2rem 0;
+        font-weight: 500;
+        font-size: .9rem;
+        &__one::before, &__two::before {
+            content: '';
+            display: inline-block;
+            vertical-align: middle;
+            width: 1rem;
+            height: 1rem;
+            margin: -.2rem .5rem 0 0;
+        }
+        &__one::before {
+            background: url("../Images/icons/utensils.svg") center center no-repeat;
+            background-size: .7rem;
+        }
+        &__two::before {
+            background: url("../Images/icons/hands.svg") center center no-repeat;
+            background-size: .9rem;
+        }
     }
     &__title {
         font-family: "Shrikhand";
         margin-bottom: .6rem;
+        font-size: 1rem;
     }
-
 }
