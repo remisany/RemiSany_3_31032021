@@ -31,8 +31,17 @@ body {
 @mixin insert_before {
     content: '';
     display: inline-block;
-    width: 1rem;
+    width: 1.5rem;
     height: 1rem;
+    margin-left: -.25rem;
+}
+
+@mixin transition_background_regular {
+    transition: background 300ms ease-in;
+}
+
+@mixin transition_background_long {
+    transition: background 800ms ease-in;
 }
 
 /*General*/
@@ -70,6 +79,12 @@ a {
     padding: 1rem 0;
     &__text {
         font-weight: 500;
+        &:before {
+            @include insert_before;
+            margin-bottom: -.1rem;
+            margin-right: .5rem;
+            background: url("../Images/icons/map.svg") center center no-repeat;
+        }
     }
 }
 
@@ -86,8 +101,13 @@ a {
         margin-top: 1rem;
         padding: .8rem 1rem;
         color: $white;
+        @include transition_background_regular;
         background: linear-gradient(-15deg, $primary, $secondary);
         border-radius: 2rem;
+        &:hover {
+            @include transition_background_regular;
+            background: linear-gradient(-15deg, lighten($primary,5%), lighten($secondary,5%));
+        }
     }
 }
 
@@ -103,7 +123,7 @@ a {
             margin: .5rem 0;
             border-radius: 1rem;
             background-color: lighten($grey, 3%);
-            transition: background 300ms ease-in;
+            @include transition_background_regular;
             &::before {
                 @include insert_before;
                 margin-bottom: -.15rem;
@@ -111,37 +131,37 @@ a {
             }
             &__one {
                 &::before {
-                    transition: background 300ms ease-in;
+                    @include transition_background_regular;
                     background: url("../Images/icons/mobile_g.svg") center center no-repeat;
                 }
                 &:hover::before {
-                    transition: background 300ms ease-in-out;
+                    @include transition_background_regular;
                     background: url("../Images/icons/mobile_p.svg") center center no-repeat;
                 }
             }
             &__two {
                 &::before {
-                    transition: background 300ms ease-in;
+                    @include transition_background_regular;
                     background: url("../Images/icons/list_g.svg") center center no-repeat;
                 }
                 &:hover::before {
-                    transition: background 300ms ease-in-out;
+                    @include transition_background_regular;
                     background: url("../Images/icons/list_p.svg") center center no-repeat;
                 }
             }
             &__three {
                 &::before {
-                    transition: background 300ms ease-in;
+                    @include transition_background_regular;
                     margin-bottom: -.2rem;
                     background: url("../Images/icons/store_g.svg") center center no-repeat;
                 }
                 &:hover::before {
-                    transition: background 300ms ease-in-out;
+                    @include transition_background_regular;
                     background: url("../Images/icons/store_p.svg") center center no-repeat;
                 }
             }
             &:hover {
-                transition: background 300ms ease-in-out;
+                @include transition_background_regular;
                 background-color: lighten($primary, 35%);
             }
         }
@@ -162,6 +182,11 @@ a {
     border-radius: 1rem;
     @include box_shadow;
     margin: .5rem 0;
+    transition: transform 150ms ease-in;
+    &:hover {
+        transition: transform 150ms ease-in;
+        transform: scale(1.01);
+    }
     &__photo {
         height: 10rem;
         object-fit: cover;
@@ -178,14 +203,14 @@ a {
             }
         }
         &__icon {
-            transition: background 800ms ease-in;
+            @include transition_background_long;
             margin-right: 1rem;
             height: 1.4rem;
             width: 1.4rem;
             background: url("../Images/icons/heart.svg") center center no-repeat;
         }
         &__icon:hover {
-            transition: background 800ms ease-in-out;
+            @include transition_background_long;
             background: url("../Images/icons/heart_solid.svg") center center no-repeat;
         }
     }
@@ -203,18 +228,35 @@ a {
         margin: .2rem 0;
         font-weight: 500;
         font-size: .9rem;
+        transition: color 300ms ease-in;
         &__one::before, &__two::before {
             @include insert_before;
             margin-bottom: -.2rem;
-            margin-right: .5rem;
+            margin-right: .25rem;
         }
-        &__one::before {
-            background: url("../Images/icons/utensils.svg") center center no-repeat;
-            background-size: .7rem;
+        &__one {
+            &::before {
+                background: url("../Images/icons/utensils_g.svg") center center no-repeat;
+                background-size: .7rem;
+            }
+            &:hover::before {
+                background: url("../Images/icons/utensils_p.svg") center center no-repeat;
+                background-size: .7rem;
+            }
         }
-        &__two::before {
-            background: url("../Images/icons/hands.svg") center center no-repeat;
-            background-size: .9rem;
+        &__two {
+            &::before {
+                background: url("../Images/icons/hands_g.svg") center center no-repeat;
+                background-size: .9rem;
+            }
+            &:hover::before {
+                background: url("../Images/icons/hands_p.svg") center center no-repeat;
+                background-size: .9rem;
+            }
+        }
+        &:hover {
+            transition: color 300ms;
+            color: lighten($primary, 20%);
         }
     }
     &__title {
