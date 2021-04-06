@@ -59,11 +59,12 @@ body {
   font-weight: 300;
 }
 
+/*Mixins*/
 /*General*/
 h2, h3, h4, h5, h6 {
   padding-bottom: 1rem;
-  font-size: 1.2rem;
   font-weight: 700;
+  font-size: 1.2rem;
 }
 
 button {
@@ -71,10 +72,12 @@ button {
   box-shadow: 0.2rem 0.2rem #ededed;
   font-weight: 500;
   font-size: 0.9rem;
+  cursor: pointer;
 }
 
 a {
   text-decoration: none;
+  cursor: pointer;
 }
 
 /*Header*/
@@ -114,7 +117,7 @@ a {
 
 /*Section operation*/
 .operation {
-  padding: 1.5rem;
+  padding: 1.5rem 1rem;
 }
 .operation__container {
   display: flex;
@@ -122,15 +125,53 @@ a {
 }
 .operation__container__button {
   text-align: start;
-  padding: 1rem 1rem 1rem 4rem;
+  padding: 1rem;
   margin: 0.5rem 0;
   border-radius: 1rem;
   background-color: #fafafa;
+  transition: background 300ms ease-in;
+}
+.operation__container__button::before {
+  content: "";
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  margin-bottom: -0.15rem;
+  margin-right: 1rem;
+}
+.operation__container__button__one::before {
+  transition: background 300ms ease-in;
+  background: url("../Images/icons/mobile_g.svg") center center no-repeat;
+}
+.operation__container__button__one:hover::before {
+  transition: background 300ms ease-in-out;
+  background: url("../Images/icons/mobile_p.svg") center center no-repeat;
+}
+.operation__container__button__two::before {
+  transition: background 300ms ease-in;
+  background: url("../Images/icons/list_g.svg") center center no-repeat;
+}
+.operation__container__button__two:hover::before {
+  transition: background 300ms ease-in-out;
+  background: url("../Images/icons/list_p.svg") center center no-repeat;
+}
+.operation__container__button__three::before {
+  transition: background 300ms ease-in;
+  margin-bottom: -0.2rem;
+  background: url("../Images/icons/store_g.svg") center center no-repeat;
+}
+.operation__container__button__three:hover::before {
+  transition: background 300ms ease-in-out;
+  background: url("../Images/icons/store_p.svg") center center no-repeat;
+}
+.operation__container__button:hover {
+  transition: background 300ms ease-in-out;
+  background-color: #f2eafb;
 }
 
 /*Section restaurants*/
 #restaurants {
-  padding: 1.5rem;
+  padding: 1.5rem 1rem;
   background-color: #F2F2F2;
 }
 
@@ -150,9 +191,23 @@ a {
 }
 .card__content {
   padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.card__content__title {
+.card__content__text__title {
   padding-bottom: 0.3rem;
+}
+.card__content__icon {
+  transition: background 800ms ease-in;
+  margin-right: 1rem;
+  height: 1.4rem;
+  width: 1.4rem;
+  background: url("../Images/icons/heart.svg") center center no-repeat;
+}
+.card__content__icon:hover {
+  transition: background 800ms ease-in-out;
+  background: url("../Images/icons/heart_solid.svg") center center no-repeat;
 }
 
 /*Footer*/
@@ -172,10 +227,10 @@ a {
 .footer__link__one::before, .footer__link__two::before {
   content: "";
   display: inline-block;
-  vertical-align: middle;
   width: 1rem;
   height: 1rem;
-  margin: -0.2rem 0.5rem 0 0;
+  margin-bottom: -0.2rem;
+  margin-right: 0.5rem;
 }
 .footer__link__one::before {
   background: url("../Images/icons/utensils.svg") center center no-repeat;

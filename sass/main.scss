@@ -23,22 +23,36 @@ body {
     font-weight: 300;
 }
 
+/*Mixins*/
+@mixin box_shadow {
+    box-shadow: .2rem .2rem darken($grey, 2%);
+}
+
+@mixin insert_before {
+    content: '';
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+}
+
 /*General*/
 h2,h3,h4,h5,h6 {
     padding-bottom: 1rem;
-    font-size: 1.2rem;
     font-weight: 700;
+    font-size: 1.2rem;
 }
 
 button {
     border: none;
-    box-shadow: .2rem .2rem darken($grey, 2%);
+    @include box_shadow;
     font-weight: 500;
     font-size: .9rem;
+    cursor: pointer;
 }
 
 a {
     text-decoration: none;
+    cursor: pointer;
 }
 
 /*Header*/
@@ -79,23 +93,64 @@ a {
 
 /*Section operation*/
 .operation {
-    padding: 1.5rem;
+    padding: 1.5rem 1rem;
     &__container {
         display : flex;
         flex-direction: column;
         &__button {
             text-align: start;
-            padding: 1rem 1rem 1rem 4rem;
+            padding: 1rem;
             margin: .5rem 0;
             border-radius: 1rem;
             background-color: lighten($grey, 3%);
+            transition: background 300ms ease-in;
+            &::before {
+                @include insert_before;
+                margin-bottom: -.15rem;
+                margin-right: 1rem;
+            }
+            &__one {
+                &::before {
+                    transition: background 300ms ease-in;
+                    background: url("../Images/icons/mobile_g.svg") center center no-repeat;
+                }
+                &:hover::before {
+                    transition: background 300ms ease-in-out;
+                    background: url("../Images/icons/mobile_p.svg") center center no-repeat;
+                }
+            }
+            &__two {
+                &::before {
+                    transition: background 300ms ease-in;
+                    background: url("../Images/icons/list_g.svg") center center no-repeat;
+                }
+                &:hover::before {
+                    transition: background 300ms ease-in-out;
+                    background: url("../Images/icons/list_p.svg") center center no-repeat;
+                }
+            }
+            &__three {
+                &::before {
+                    transition: background 300ms ease-in;
+                    margin-bottom: -.2rem;
+                    background: url("../Images/icons/store_g.svg") center center no-repeat;
+                }
+                &:hover::before {
+                    transition: background 300ms ease-in-out;
+                    background: url("../Images/icons/store_p.svg") center center no-repeat;
+                }
+            }
+            &:hover {
+                transition: background 300ms ease-in-out;
+                background-color: lighten($primary, 35%);
+            }
         }
     }
 }
 
 /*Section restaurants*/
 #restaurants {
-    padding: 1.5rem;
+    padding: 1.5rem 1rem;
     background-color: $grey;
 }
 
@@ -105,7 +160,7 @@ a {
     flex-direction: column;
     background-color: $white;
     border-radius: 1rem;
-    box-shadow: .2rem .2rem darken($grey, 2%);
+    @include box_shadow;
     margin: .5rem 0;
     &__photo {
         height: 10rem;
@@ -114,8 +169,24 @@ a {
     }
     &__content {
         padding: 1rem;
-        &__title {
-            padding-bottom: .3rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &__text {
+            &__title {
+                padding-bottom: .3rem;
+            }
+        }
+        &__icon {
+            transition: background 800ms ease-in;
+            margin-right: 1rem;
+            height: 1.4rem;
+            width: 1.4rem;
+            background: url("../Images/icons/heart.svg") center center no-repeat;
+        }
+        &__icon:hover {
+            transition: background 800ms ease-in-out;
+            background: url("../Images/icons/heart_solid.svg") center center no-repeat;
         }
     }
 }
@@ -133,12 +204,9 @@ a {
         font-weight: 500;
         font-size: .9rem;
         &__one::before, &__two::before {
-            content: '';
-            display: inline-block;
-            vertical-align: middle;
-            width: 1rem;
-            height: 1rem;
-            margin: -.2rem .5rem 0 0;
+            @include insert_before;
+            margin-bottom: -.2rem;
+            margin-right: .5rem;
         }
         &__one::before {
             background: url("../Images/icons/utensils.svg") center center no-repeat;
