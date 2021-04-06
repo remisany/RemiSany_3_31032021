@@ -62,7 +62,7 @@ a {
 }
 
 /*Header*/
-#header {
+.header {
     display: block;
     position: absolute;
     background-color: $white;
@@ -76,6 +76,13 @@ a {
         font-family: "Shrikhand";
         font-size: 1.6rem;
         text-align: center;
+        &__menu::before {
+            @include insert_before;
+            background: url("../Images/icons/arrow.svg") center center no-repeat;
+            position: fixed;
+            top: 1.25rem;
+            left: 1rem;
+        }
     }
 }
 
@@ -309,3 +316,5 @@ a {
         font-size: 1rem;
     }
 }
+
+/*section photo */
