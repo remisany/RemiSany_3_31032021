@@ -1,10 +1,16 @@
 /*Reset CSS*/
 html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,iframe,hr,h1,h2,h3,h4,h5,h6{margin:0;padding:0}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}ul{list-style:none}button,input,select{margin:0}html{box-sizing:border-box}*,*::before,*::after{box-sizing:inherit}img,video{height:auto;max-width:100%}iframe{border:0}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}
 
+/*Couleurs*/
+$primary: #9356DC;
+$secondary: #FF79DA;
+$tertiary: #99E2D0;
+$grey: #F2F2F2;
+$white: #FFF;
+
 /*Polices*/
-body {
+* {
     font-family: "Roboto", sans-serif;
-    font-weight: 300;
     font-size: 15px;
 }
 
@@ -13,17 +19,27 @@ h1 {
     font-size: 2rem;
 }
 
+body {
+    font-weight: 300;
+}
+
+/*General*/
 h2,h3,h4,h5,h6 {
     font-weight: 800;
     font-size: 1.3rem;
+    padding-bottom: 1rem;
 }
 
-/*Couleurs*/
-$primary: #9356DC;
-$secondary: #FF79DA;
-$tertiary: #99E2D0;
-$grey: #F2F2F2;
-$white: #FFF;
+button {
+    font-weight: 500;
+    font-size: .9rem;
+    border: none;
+    box-shadow: .2rem .2rem darken($grey, 2%);
+}
+
+a {
+    text-decoration: none;
+}
 
 /*Header*/
 #header {
@@ -54,11 +70,25 @@ $white: #FFF;
     }
     &__button {
         margin-top: 1rem;
-        padding: .8rem;
-        border: none;
+        padding: .8rem 1rem;
         color: $white;
         background: linear-gradient(-15deg, $primary, $secondary);
         border-radius: 2rem;
+    }
+}
+
+/*Section operation*/
+.operation {
+    padding: 1.5rem;
+    &__container {
+        display : flex;
+        flex-direction: column;
+        &__button {
+            padding: 1rem;
+            margin: .5rem 0;
+            border-radius: 1rem;
+            background-color: lighten($grey, 3%);
+        }
     }
 }
 
@@ -74,7 +104,7 @@ $white: #FFF;
     flex-direction: column;
     background-color: $white;
     border-radius: 1rem;
-    box-shadow: .2rem .2rem darken($grey, 2%); ;
+    box-shadow: .2rem .2rem darken($grey, 2%);
     &__photo {
         height: 10rem;
         object-fit: cover;
@@ -86,4 +116,22 @@ $white: #FFF;
             padding-bottom: .3rem;
         }
     }
+}
+
+/*Footer*/
+.footer {
+    display: flex;
+    flex-direction: column;
+    padding: .9rem;
+    background-color: darken($grey, 70%);
+    &__lien {
+        color: $white;
+        padding: .1rem;
+        margin: .1rem 0;
+    }
+    &__title {
+        font-family: "Shrikhand";
+        margin-bottom: .6rem;
+    }
+
 }
