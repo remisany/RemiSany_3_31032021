@@ -101,25 +101,47 @@ a {
         margin-top: 1rem;
         padding: .8rem 1rem;
         color: $white;
-        @include transition_background_regular;
-        background: linear-gradient(-15deg, $primary, $secondary);
         border-radius: 2rem;
+        background-color: $secondary;
+        transition: background-color 300ms;
+        background-image: linear-gradient(-15deg, $primary, rgba(255,255,255,0));
         &:hover {
-            @include transition_background_regular;
-            background: linear-gradient(-15deg, lighten($primary,5%), lighten($secondary,5%));
+            transition: background-color 300ms;
+            background-color: darken($secondary,10%);
         }
     }
 }
 
 /*Section operation*/
+#operation {
+    padding: 1.5rem 1rem 0 1rem;
+}
+
 .operation {
-    padding: 1.5rem 1rem;
+    display: flex;
+    &__list {
+        z-index: 2;
+        & li {
+        font-size: .8rem;
+        display: block;
+        width: 1.2rem;
+        height: 1.2rem;
+        padding-top: .2rem;
+        text-align: center;
+        background: $primary;
+        border-radius: 5rem;
+        margin: 1.5rem -.6rem 2.9rem 0;
+        color: $white;
+        font-weight: 500;
+        }
+    }
     &__container {
-        display : flex;
+        flex: 1;
+        display: flex;
         flex-direction: column;
         &__button {
             text-align: start;
-            padding: 1rem;
+            padding: 1rem 1rem 1rem 2rem;
             margin: .5rem 0;
             border-radius: 1rem;
             background-color: lighten($grey, 3%);
@@ -201,8 +223,24 @@ a {
             &__title {
                 padding-bottom: .3rem;
             }
-        }
+         }
         &__icon {
+            &__new::before {
+                content: "Nouveau";
+                display: block;
+                text-align: center;
+                float: right;
+                width: 5rem;
+                height: auto;
+                padding: .3rem;
+                margin-top: -11rem;
+                margin-right: -1rem;
+                background: $tertiary;
+                color: darken($tertiary, 40%);
+                font-size: .8rem;
+                font-weight: 500;
+                border-radius: .2rem;
+            }
             @include transition_background_long;
             margin-right: 1rem;
             height: 1.4rem;
