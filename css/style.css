@@ -100,8 +100,8 @@ a {
   width: 1.5rem;
   height: 1rem;
   margin-left: -0.25rem;
+  position: absolute;
   background: url("../Images/icons/arrow.svg") center center no-repeat;
-  position: fixed;
   top: 1.25rem;
   left: 1rem;
 }
@@ -337,6 +337,51 @@ a {
   font-size: 1rem;
 }
 
+/*PAGE MENU*/
 /*section photo */
+#photo {
+  display: block;
+  position: absolute;
+  top: 3.5rem;
+}
+
+.menu {
+  position: relative;
+  margin-top: 18rem;
+  border-radius: 2rem;
+  padding: 1rem;
+  background-color: #F2F2F2;
+}
+.menu__title {
+  margin: 0.5rem 0;
+  font-family: "Shrikhand";
+  font-size: 1.6rem;
+}
+.menu__starters__title, .menu__dishes__title, .menu__dessert__title {
+  margin: 1.8rem 0 0.8rem 0;
+  padding: 0.2rem 0;
+  width: 2.5rem;
+  border-bottom: 0.2rem solid #99E2D0;
+}
+.menu__order {
+  text-align: center;
+}
+.menu__order__button {
+  margin-top: 1rem;
+  padding: 0.8rem 1rem;
+  color: #FFF;
+  border-radius: 2rem;
+  background-color: #FF79DA;
+  transition: background-color 300ms;
+  background-image: linear-gradient(-15deg, #9356DC, rgba(255, 255, 255, 0));
+  padding-right: 3rem;
+  padding-left: 3rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.menu__order__button:hover {
+  transition: background-color 300ms;
+  background-color: #ff46cc;
+}
 
 /*# sourceMappingURL=style.css.map */

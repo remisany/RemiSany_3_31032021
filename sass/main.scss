@@ -40,6 +40,20 @@ body {
     transition: background 800ms ease-in;
 }
 
+@mixin linear_button {
+    margin-top: 1rem;
+    padding: .8rem 1rem;
+    color: $white;
+    border-radius: 2rem;
+    background-color: $secondary;
+    transition: background-color 300ms;
+    background-image: linear-gradient(-15deg, $primary, rgba(255,255,255,0));
+    &:hover {
+        transition: background-color 300ms;
+        background-color: darken($secondary,10%);
+    }
+}
+
 /*General*/
 h2,h3,h4,h5,h6 {
     padding-bottom: 1rem;
@@ -78,8 +92,8 @@ a {
         text-align: center;
         &__menu::before {
             @include insert_before;
+            position: absolute;
             background: url("../Images/icons/arrow.svg") center center no-repeat;
-            position: fixed;
             top: 1.25rem;
             left: 1rem;
         }
@@ -111,17 +125,7 @@ a {
         padding: 0 1rem .5rem 1rem;
     }
     &__button {
-        margin-top: 1rem;
-        padding: .8rem 1rem;
-        color: $white;
-        border-radius: 2rem;
-        background-color: $secondary;
-        transition: background-color 300ms;
-        background-image: linear-gradient(-15deg, $primary, rgba(255,255,255,0));
-        &:hover {
-            transition: background-color 300ms;
-            background-color: darken($secondary,10%);
-        }
+        @include linear_button;
     }
 }
 
@@ -317,4 +321,42 @@ a {
     }
 }
 
+/*PAGE MENU*/
+
 /*section photo */
+#photo {
+   display: block;
+   position: absolute;
+   top: 3.5rem;
+}
+
+.menu {
+    position: relative;
+    margin-top: 18rem;
+    border-radius: 2rem;
+    padding: 1rem;
+    background-color: $grey;
+    &__title {
+        margin: .5rem 0;
+        font-family: "Shrikhand";
+        font-size: 1.6rem;
+    }
+    &__starters, &__dishes, &__dessert {
+        &__title {
+            margin: 1.8rem 0 .8rem 0;
+            padding: .2rem 0;
+            width: 2.5rem;
+            border-bottom: .2rem solid $tertiary;
+        }
+    }
+    &__order {
+        text-align: center;
+        &__button {
+            @include linear_button;
+            padding-right: 3rem;
+            padding-left: 3rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+    }
+}
