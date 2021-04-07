@@ -105,7 +105,7 @@ a {
     width: 100%;
     z-index: 100;
     background-color: rgba(255,255,255,.6);
-    animation: loading .1s 3s both;
+    animation: loading .1s 3ms both;
     &__container {
         display: flex;
         justify-content: center;
@@ -275,9 +275,7 @@ a {
     @include box_shadow;
     margin: .5rem 0;
     transition: transform 150ms ease-in;
-    &:hover {
-        transform: scale(1.01);
-    }
+    overflow: hidden;
     &__photo {
         height: 10rem;
         object-fit: cover;
@@ -288,6 +286,10 @@ a {
         display: flex;
         justify-content: space-between;
         &__text {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            flex: 1;
             &__title {
                 padding-bottom: .3rem;
             }
@@ -314,9 +316,37 @@ a {
             }
         }
         &__additional {
-            align-self: flex-end;
             &__price {
-                font-weight: 500;  
+                align-self: flex-end;
+                font-weight: 500;
+                padding-right: 1rem;
+                padding-left: .5rem;
+                background-color: $white;
+            }
+            &__icon {
+                width: 4rem;
+                min-height: 5rem;
+                margin: -1.5rem -5rem -1.5rem 0;
+                padding: 1.6rem 1rem 1rem 1rem;
+                align-self: center;
+                background-color: $tertiary;
+            }
+            &__price, &__icon, &__icon img {
+                transition: transform 1000ms ease-in;  
+            }
+
+        }
+    }
+    &:hover {
+        .card {
+            transform: scale(1.01);
+        }
+        .card__content__additional {
+            &__price, &__icon {
+                transform: translate(-4rem);
+            }
+            &__icon img {
+                transform: rotate(360deg);
             }
         }
     }
@@ -382,7 +412,7 @@ a {
 .menu {
     position: relative;
     margin-top: 18rem;
-    border-radius: 2rem;
+    border-radius: 2rem 2rem 0 0;
     padding: 1rem;
     background-color: $grey;
     &__title {
@@ -416,10 +446,4 @@ a {
             margin-bottom: 2rem;
         }
     }
-}
-
-.menu .card {
-    &:hover {
-            background-color: $tertiary;
-        }
 }
