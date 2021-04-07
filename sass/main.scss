@@ -87,6 +87,56 @@ a {
     color: black;
 }
 
+/*loading*/
+.loading {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+    background-color: rgba(255,255,255,.6);
+    animation: loading .1s 3s both;
+    &__container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        &__item {
+            animation: bars 1000ms backwards infinite ease-in-out alternate;
+            height: 5rem;
+            width: .8rem;
+            margin: 1rem;
+            border-radius: 2rem;
+            &__one {
+                background-color: $primary;
+            }
+            &__two {
+                background-color: #C968DB;
+                animation-delay: 200ms;
+            }
+            &__three {
+                background-color: $secondary;
+                animation-delay: 400ms;
+            }
+        }
+    }
+}
+@keyframes loading {
+    100% {
+        opacity: 0;
+        z-index: -100;
+    }
+}
+
+@keyframes bars {
+    0% {
+        transform: scaleY(0.5);     
+    }
+    100% {
+        transform: scaleY(1.0);
+    }
+}
+
 /*Header*/
 .header {
     display: block;
@@ -247,13 +297,13 @@ a {
         padding: 1rem;
         display: flex;
         justify-content: space-between;
-        align-items: center;
         &__text {
             &__title {
                 padding-bottom: .3rem;
             }
          }
         &__icon {
+            align-self: center;
             &__new::before {
                 content: "Nouveau";
                 display: block;
@@ -276,9 +326,11 @@ a {
         &__icon:hover {
             @include appearance_heart
         }
-        &__price {
-            font-weight: 500;
-            margin-top: 1.8rem;
+        &__additional {
+            align-self: flex-end;
+            &__price {
+                font-weight: 500;  
+            }
         }
     }
 }
@@ -382,4 +434,10 @@ a {
             margin-bottom: 2rem;
         }
     }
+}
+
+.menu .card {
+    &:hover {
+            background-color: $tertiary;
+        }
 }
