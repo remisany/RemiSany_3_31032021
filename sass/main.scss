@@ -36,20 +36,14 @@ body {
     transition: background 300ms ease-in;
 }
 
-@mixin transition_background_long {
-    transition: background 800ms ease-in;
-}
-
-@mixin appearance_heart {
-    @include transition_background_long;
-    background: url("../Images/icons/heart_solid.svg") center center no-repeat;
-}
-
-@mixin disppearance_heart {
+@mixin heart {
     height: 1.4rem;
     width: 1.4rem; 
-    @include transition_background_long;
     background: url("../Images/icons/heart.svg") center center no-repeat;
+    transition: background 800ms ease-in;
+    &:hover {
+        background: url("../Images/icons/heart_solid.svg") center center no-repeat;
+    }
 }
 
 @mixin linear_button {
@@ -58,11 +52,27 @@ body {
     color: $white;
     border-radius: 2rem;
     background-color: $secondary;
-    transition: background-color 300ms;
+    transition: background-color 300ms ease-in;
     background-image: linear-gradient(-15deg, $primary, rgba(255,255,255,0));
     &:hover {
-        transition: background-color 300ms;
         background-color: darken($secondary,10%);
+    }
+}
+
+/*Keyframes*/
+@keyframes loading {
+    100% {
+        opacity: 0;
+        z-index: -100;
+    }
+}
+
+@keyframes bars {
+    0% {
+        transform: scaleY(0.5);     
+    }
+    100% {
+        transform: scaleY(1.0);
     }
 }
 
@@ -119,21 +129,6 @@ a {
                 animation-delay: 400ms;
             }
         }
-    }
-}
-@keyframes loading {
-    100% {
-        opacity: 0;
-        z-index: -100;
-    }
-}
-
-@keyframes bars {
-    0% {
-        transform: scaleY(0.5);     
-    }
-    100% {
-        transform: scaleY(1.0);
     }
 }
 
@@ -236,7 +231,6 @@ a {
                     background: url("../Images/icons/mobile_g.svg") center center no-repeat;
                 }
                 &:hover::before {
-                    @include transition_background_regular;
                     background: url("../Images/icons/mobile_p.svg") center center no-repeat;
                 }
             }
@@ -246,7 +240,6 @@ a {
                     background: url("../Images/icons/list_g.svg") center center no-repeat;
                 }
                 &:hover::before {
-                    @include transition_background_regular;
                     background: url("../Images/icons/list_p.svg") center center no-repeat;
                 }
             }
@@ -257,12 +250,10 @@ a {
                     background: url("../Images/icons/store_g.svg") center center no-repeat;
                 }
                 &:hover::before {
-                    @include transition_background_regular;
                     background: url("../Images/icons/store_p.svg") center center no-repeat;
                 }
             }
             &:hover {
-                @include transition_background_regular;
                 background-color: lighten($primary, 35%);
             }
         }
@@ -285,7 +276,6 @@ a {
     margin: .5rem 0;
     transition: transform 150ms ease-in;
     &:hover {
-        transition: transform 150ms ease-in;
         transform: scale(1.01);
     }
     &__photo {
@@ -304,6 +294,8 @@ a {
          }
         &__icon {
             align-self: center;
+            margin-right: 1rem;
+            @include heart;
             &__new::before {
                 content: "Nouveau";
                 display: block;
@@ -320,11 +312,6 @@ a {
                 font-weight: 500;
                 border-radius: .2rem;
             }
-            margin-right: 1rem;
-            @include disppearance_heart
-        }
-        &__icon:hover {
-            @include appearance_heart
         }
         &__additional {
             align-self: flex-end;
@@ -355,22 +342,20 @@ a {
         }
         &__one {
             &::before {
+                @include transition_background_regular;
                 background: url("../Images/icons/utensils_g.svg") center center no-repeat;
-                background-size: .7rem;
             }
             &:hover::before {
                 background: url("../Images/icons/utensils_p.svg") center center no-repeat;
-                background-size: .7rem;
             }
         }
         &__two {
             &::before {
+                @include transition_background_regular;
                 background: url("../Images/icons/hands_g.svg") center center no-repeat;
-                background-size: .9rem;
             }
             &:hover::before {
                 background: url("../Images/icons/hands_p.svg") center center no-repeat;
-                background-size: .9rem;
             }
         }
         &:hover {
@@ -409,11 +394,8 @@ a {
             font-size: 1.6rem;
         }
         &__icon {
-            @include disppearance_heart;
             margin: 1rem 1rem 0 0;
-            &:hover {
-                @include appearance_heart;
-            }
+            @include heart;
         }
     }
     &__starters, &__dishes, &__dessert {

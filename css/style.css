@@ -56,6 +56,21 @@ body {
 }
 
 /*Mixins*/
+/*Keyframes*/
+@keyframes loading {
+  100% {
+    opacity: 0;
+    z-index: -100;
+  }
+}
+@keyframes bars {
+  0% {
+    transform: scaleY(0.5);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
 /*General*/
 h2, h3, h4, h5, h6 {
   padding-bottom: 1rem;
@@ -112,20 +127,6 @@ a {
   animation-delay: 400ms;
 }
 
-@keyframes loading {
-  100% {
-    opacity: 0;
-    z-index: -100;
-  }
-}
-@keyframes bars {
-  0% {
-    transform: scaleY(0.5);
-  }
-  100% {
-    transform: scaleY(1);
-  }
-}
 /*Header*/
 .header {
   display: block;
@@ -190,11 +191,10 @@ a {
   color: #FFF;
   border-radius: 2rem;
   background-color: #FF79DA;
-  transition: background-color 300ms;
+  transition: background-color 300ms ease-in;
   background-image: linear-gradient(-15deg, #9356DC, rgba(255, 255, 255, 0));
 }
 #exploration__button:hover {
-  transition: background-color 300ms;
   background-color: #ff46cc;
 }
 
@@ -249,7 +249,6 @@ a {
   background: url("../Images/icons/mobile_g.svg") center center no-repeat;
 }
 .operation__container__button__one:hover::before {
-  transition: background 300ms ease-in;
   background: url("../Images/icons/mobile_p.svg") center center no-repeat;
 }
 .operation__container__button__two::before {
@@ -257,7 +256,6 @@ a {
   background: url("../Images/icons/list_g.svg") center center no-repeat;
 }
 .operation__container__button__two:hover::before {
-  transition: background 300ms ease-in;
   background: url("../Images/icons/list_p.svg") center center no-repeat;
 }
 .operation__container__button__three::before {
@@ -266,11 +264,9 @@ a {
   background: url("../Images/icons/store_g.svg") center center no-repeat;
 }
 .operation__container__button__three:hover::before {
-  transition: background 300ms ease-in;
   background: url("../Images/icons/store_p.svg") center center no-repeat;
 }
 .operation__container__button:hover {
-  transition: background 300ms ease-in;
   background-color: #f2eafb;
 }
 
@@ -291,7 +287,6 @@ a {
   transition: transform 150ms ease-in;
 }
 .card:hover {
-  transition: transform 150ms ease-in;
   transform: scale(1.01);
 }
 .card__photo {
@@ -312,8 +307,11 @@ a {
   margin-right: 1rem;
   height: 1.4rem;
   width: 1.4rem;
-  transition: background 800ms ease-in;
   background: url("../Images/icons/heart.svg") center center no-repeat;
+  transition: background 800ms ease-in;
+}
+.card__content__icon:hover {
+  background: url("../Images/icons/heart_solid.svg") center center no-repeat;
 }
 .card__content__icon__new::before {
   content: "Nouveau";
@@ -330,10 +328,6 @@ a {
   font-size: 0.8rem;
   font-weight: 500;
   border-radius: 0.2rem;
-}
-.card__content__icon:hover {
-  transition: background 800ms ease-in;
-  background: url("../Images/icons/heart_solid.svg") center center no-repeat;
 }
 .card__content__additional {
   align-self: flex-end;
@@ -367,20 +361,18 @@ a {
   margin-right: 0.25rem;
 }
 .footer__link__one::before {
+  transition: background 300ms ease-in;
   background: url("../Images/icons/utensils_g.svg") center center no-repeat;
-  background-size: 0.7rem;
 }
 .footer__link__one:hover::before {
   background: url("../Images/icons/utensils_p.svg") center center no-repeat;
-  background-size: 0.7rem;
 }
 .footer__link__two::before {
+  transition: background 300ms ease-in;
   background: url("../Images/icons/hands_g.svg") center center no-repeat;
-  background-size: 0.9rem;
 }
 .footer__link__two:hover::before {
   background: url("../Images/icons/hands_p.svg") center center no-repeat;
-  background-size: 0.9rem;
 }
 .footer__link:hover {
   transition: color 300ms;
@@ -417,14 +409,13 @@ a {
   font-size: 1.6rem;
 }
 .menu__title__icon {
+  margin: 1rem 1rem 0 0;
   height: 1.4rem;
   width: 1.4rem;
-  transition: background 800ms ease-in;
   background: url("../Images/icons/heart.svg") center center no-repeat;
-  margin: 1rem 1rem 0 0;
+  transition: background 800ms ease-in;
 }
 .menu__title__icon:hover {
-  transition: background 800ms ease-in;
   background: url("../Images/icons/heart_solid.svg") center center no-repeat;
 }
 .menu__starters__title, .menu__dishes__title, .menu__dessert__title {
@@ -442,7 +433,7 @@ a {
   color: #FFF;
   border-radius: 2rem;
   background-color: #FF79DA;
-  transition: background-color 300ms;
+  transition: background-color 300ms ease-in;
   background-image: linear-gradient(-15deg, #9356DC, rgba(255, 255, 255, 0));
   padding-right: 3rem;
   padding-left: 3rem;
@@ -450,7 +441,6 @@ a {
   margin-bottom: 2rem;
 }
 .menu__order__button:hover {
-  transition: background-color 300ms;
   background-color: #ff46cc;
 }
 
