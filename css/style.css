@@ -260,10 +260,10 @@ a {
   padding-bottom: 0.3rem;
 }
 .card__content__icon {
-  transition: background 800ms ease-in;
   margin-right: 1rem;
   height: 1.4rem;
   width: 1.4rem;
+  transition: background 800ms ease-in;
   background: url("../Images/icons/heart.svg") center center no-repeat;
 }
 .card__content__icon__new::before {
@@ -285,6 +285,10 @@ a {
 .card__content__icon:hover {
   transition: background 800ms ease-in;
   background: url("../Images/icons/heart_solid.svg") center center no-repeat;
+}
+.card__content__price {
+  font-weight: 500;
+  margin-top: 1.8rem;
 }
 
 /*Footer*/
@@ -353,9 +357,24 @@ a {
   background-color: #F2F2F2;
 }
 .menu__title {
+  display: flex;
+  justify-content: space-between;
+}
+.menu__title__text {
   margin: 0.5rem 0;
   font-family: "Shrikhand";
   font-size: 1.6rem;
+}
+.menu__title__icon {
+  height: 1.4rem;
+  width: 1.4rem;
+  transition: background 800ms ease-in;
+  background: url("../Images/icons/heart.svg") center center no-repeat;
+  margin: 1rem 1rem 0 0;
+}
+.menu__title__icon:hover {
+  transition: background 800ms ease-in;
+  background: url("../Images/icons/heart_solid.svg") center center no-repeat;
 }
 .menu__starters__title, .menu__dishes__title, .menu__dessert__title {
   margin: 1.8rem 0 0.8rem 0;
