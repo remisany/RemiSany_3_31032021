@@ -1,0 +1,23 @@
+.header {
+    display: block;
+    position: absolute;
+    background-color: $white;
+    width: 100%;
+    top: 0;
+    height: 3.5rem;
+    padding-top: .5rem;
+    box-shadow: 0 .1rem darken($grey, 12%);
+    &__title {
+        display: block;
+        font-family: "Shrikhand";
+        font-size: 1.6rem;
+        text-align: center;
+        &__menu::before {
+            @include insert_before;
+            position: absolute;
+            background: url("../Images/icons/arrow.svg") center center no-repeat;
+            top: 1.25rem;
+            left: 1rem;
+        }
+    }
+}

@@ -1,0 +1,38 @@
+@mixin box_shadow {
+    box-shadow: .2rem .2rem darken($grey, 2%);
+}
+
+@mixin insert_before {
+    content: '';
+    display: inline-block;
+    width: 1.5rem;
+    height: 1rem;
+    margin-left: -.25rem;
+}
+
+@mixin transition_background_regular {
+    transition: background 300ms ease-in;
+}
+
+@mixin heart {
+    height: 1.4rem;
+    width: 1.4rem; 
+    background: url("../Images/icons/heart.svg") center center no-repeat;
+    transition: background 800ms ease-in;
+    &:hover {
+        background: url("../Images/icons/heart_solid.svg") center center no-repeat;
+    }
+}
+
+@mixin linear_button {
+    margin-top: 1rem;
+    padding: .8rem 1rem;
+    color: $white;
+    border-radius: 2rem;
+    background-color: $secondary;
+    transition: background-color 300ms ease-in;
+    background-image: linear-gradient(-15deg, $primary, rgba(255,255,255,0));
+    &:hover {
+        background-color: darken($secondary,10%);
+    }
+}

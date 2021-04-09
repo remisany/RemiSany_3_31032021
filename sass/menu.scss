@@ -1,0 +1,45 @@
+/*section photo */
+#photo {
+    display: block;
+    position: absolute;
+    top: 3.5rem;
+ }
+ 
+ .menu {
+     position: relative;
+     margin-top: 18rem;
+     border-radius: 2rem 2rem 0 0;
+     padding: 1rem;
+     background-color: $grey;
+     &__title {
+         display: flex;
+         justify-content: space-between;
+         &__text {
+             margin: .5rem 0;
+             font-family: "Shrikhand";
+             font-size: 1.6rem;
+         }
+         &__icon {
+             margin: 1rem 1rem 0 0;
+             @include heart;
+         }
+     }
+     &__starters, &__dishes, &__dessert {
+         &__title {
+             margin: 1.8rem 0 .8rem 0;
+             padding: .2rem 0;
+             width: 2.5rem;
+             border-bottom: .2rem solid $tertiary;
+         }
+     }
+     &__order {
+         text-align: center;
+         &__button {
+             @include linear_button;
+             padding-right: 3rem;
+             padding-left: 3rem;
+             margin-top: 2rem;
+             margin-bottom: 2rem;
+         }
+     }
+ }
