@@ -1,3 +1,18 @@
+/*Keyframes*/
+@keyframes loading {
+  100% {
+    opacity: 0;
+    z-index: -100;
+  }
+}
+@keyframes bars {
+  0% {
+    transform: scaleY(0.5);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
 /*Reset CSS*/
 html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6 {
   margin: 0;
@@ -43,8 +58,8 @@ td, th {
   padding: 0;
 }
 
-/*Couleurs*/
-/*Polices*/
+/*Colors*/
+/*Fonts*/
 * {
   font-family: "Roboto", sans-serif;
   font-size: 15px;
@@ -55,29 +70,13 @@ body {
   margin-top: 3.5rem;
 }
 
-/*Mixins*/
-/*Keyframes*/
-@keyframes loading {
-  100% {
-    opacity: 0;
-    z-index: -100;
-  }
-}
-@keyframes bars {
-  0% {
-    transform: scaleY(0.5);
-  }
-  100% {
-    transform: scaleY(1);
-  }
-}
-/*General*/
+/*Titles*/
 h2, h3, h4, h5, h6 {
-  padding-bottom: 1rem;
   font-weight: 700;
   font-size: 1.2rem;
 }
 
+/*Buttons*/
 button {
   border: none;
   box-shadow: 0.2rem 0.2rem #ededed;
@@ -86,13 +85,14 @@ button {
   cursor: pointer;
 }
 
+/*Links*/
 a {
   text-decoration: none;
   cursor: pointer;
   color: black;
 }
 
-/*loading*/
+/*Loading*/
 .loading {
   position: fixed;
   top: 0;
@@ -127,7 +127,6 @@ a {
   animation-delay: 400ms;
 }
 
-/*Header*/
 .header {
   display: block;
   position: absolute;
@@ -154,6 +153,54 @@ a {
   background: url("../Images/icons/arrow.svg") center center no-repeat;
   top: 1.25rem;
   left: 1rem;
+}
+
+/*Footer*/
+.footer {
+  display: flex;
+  flex-direction: column;
+  padding: 0.9rem;
+  background-color: #404040;
+}
+.footer__link {
+  color: #FFF;
+  padding: 0.1rem;
+  margin: 0.2rem 0;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: color 300ms ease-in;
+}
+.footer__link__one::before, .footer__link__two::before {
+  content: "";
+  display: inline-block;
+  width: 1.5rem;
+  height: 1rem;
+  margin-left: -0.25rem;
+  margin-bottom: -0.2rem;
+  margin-right: 0.25rem;
+}
+.footer__link__one::before {
+  transition: background 300ms ease-in;
+  background: url("../Images/icons/utensils_g.svg") center center no-repeat;
+}
+.footer__link__one:hover::before {
+  background: url("../Images/icons/utensils_p.svg") center center no-repeat;
+}
+.footer__link__two::before {
+  transition: background 300ms ease-in;
+  background: url("../Images/icons/hands_g.svg") center center no-repeat;
+}
+.footer__link__two:hover::before {
+  background: url("../Images/icons/hands_p.svg") center center no-repeat;
+}
+.footer__link:hover {
+  transition: color 300ms;
+  color: #c9abee;
+}
+.footer__title {
+  font-family: "Shrikhand";
+  margin-bottom: 0.6rem;
+  font-size: 1rem;
 }
 
 /*Section location*/
@@ -276,16 +323,15 @@ a {
   background-color: #F2F2F2;
 }
 
-/*Carte*/
+/*Card*/
 .card {
   display: flex;
   flex-direction: column;
   background-color: #FFF;
   border-radius: 1rem;
+  margin: 1rem 0;
+  width: 30rem;
   box-shadow: 0.2rem 0.2rem #ededed;
-  margin: 0.5rem 0;
-  transition: transform 150ms ease-in;
-  overflow: hidden;
 }
 .card__photo {
   height: 10rem;
@@ -295,25 +341,13 @@ a {
 .card__content {
   padding: 1rem;
   display: flex;
+  height: 5rem;
 }
 .card__content__text {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  width: 100%;
-}
-.card__content__text__title {
-  width: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  padding-bottom: 0.3rem;
-}
-.card__content__text__district {
-  width: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
 }
 .card__content__icon {
   align-self: center;
@@ -332,7 +366,6 @@ a {
   text-align: center;
   float: right;
   width: 5rem;
-  height: auto;
   padding: 0.3rem;
   margin-top: -11rem;
   margin-right: -1rem;
@@ -342,84 +375,7 @@ a {
   font-weight: 500;
   border-radius: 0.2rem;
 }
-.card__content__additional__price {
-  display: flex;
-  align-items: flex-end;
-  font-weight: 500;
-  padding-right: 1rem;
-  padding-left: 0.5rem;
-  /*background-color: $white;*/
-}
-.card__content__additional__icon {
-  width: 4rem;
-  min-height: 5rem;
-  margin: -1.5rem -5rem -1.5rem 0;
-  padding: 1.6rem 1rem 1rem 1rem;
-  align-self: center;
-  background-color: #99E2D0;
-}
-.card__content__additional__price, .card__content__additional__icon, .card__content__additional__icon img {
-  transition: transform 1000ms ease-in;
-}
-.card:hover .card {
-  transform: scale(1.01);
-}
-.card:hover .card__content__additional__price, .card:hover .card__content__additional__icon {
-  transform: translate(-4rem);
-}
-.card:hover .card__content__additional__icon img {
-  transform: rotate(360deg);
-}
 
-/*Footer*/
-.footer {
-  display: flex;
-  flex-direction: column;
-  padding: 0.9rem;
-  background-color: #404040;
-}
-.footer__link {
-  color: #FFF;
-  padding: 0.1rem;
-  margin: 0.2rem 0;
-  font-weight: 500;
-  font-size: 0.9rem;
-  transition: color 300ms ease-in;
-}
-.footer__link__one::before, .footer__link__two::before {
-  content: "";
-  display: inline-block;
-  width: 1.5rem;
-  height: 1rem;
-  margin-left: -0.25rem;
-  margin-bottom: -0.2rem;
-  margin-right: 0.25rem;
-}
-.footer__link__one::before {
-  transition: background 300ms ease-in;
-  background: url("../Images/icons/utensils_g.svg") center center no-repeat;
-}
-.footer__link__one:hover::before {
-  background: url("../Images/icons/utensils_p.svg") center center no-repeat;
-}
-.footer__link__two::before {
-  transition: background 300ms ease-in;
-  background: url("../Images/icons/hands_g.svg") center center no-repeat;
-}
-.footer__link__two:hover::before {
-  background: url("../Images/icons/hands_p.svg") center center no-repeat;
-}
-.footer__link:hover {
-  transition: color 300ms;
-  color: #c9abee;
-}
-.footer__title {
-  font-family: "Shrikhand";
-  margin-bottom: 0.6rem;
-  font-size: 1rem;
-}
-
-/*PAGE MENU*/
 /*section photo */
 #photo {
   display: block;
