@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*Keyframes*/
 @keyframes loading {
   100% {
@@ -11,6 +12,15 @@
   }
   100% {
     transform: scaleY(1);
+  }
+}
+@keyframes appearance {
+  0% {
+    opacity: 0;
+    transform: translateY(-2rem);
+  }
+  100% {
+    opacity: 1;
   }
 }
 /*Reset CSS*/
@@ -100,7 +110,7 @@ a {
   width: 100%;
   z-index: 100;
   background-color: rgba(255, 255, 255, 0.6);
-  animation: loading 0.1s 3ms both;
+  animation: loading 0.1s 3s both;
 }
 .loading__container {
   display: flex;
@@ -465,6 +475,7 @@ a {
 }
 
 .card-menu {
+  opacity: 0;
   padding: 1rem 0 1rem 1rem;
   margin: 1rem 0;
   background-color: #FFF;
@@ -535,18 +546,35 @@ a {
   transform: rotate(360deg);
 }
 
+/*APPARITION CARD*/
+.menu__starters__card, .menu__dishes__card, .menu__desserts__card {
+  animation: appearance 1s forwards ease-in-out;
+}
+.menu__starters__card__1, .menu__dishes__card__1, .menu__desserts__card__1 {
+  animation-delay: 3200ms;
+}
+.menu__starters__card__2, .menu__dishes__card__2, .menu__desserts__card__2 {
+  animation-delay: 3400ms;
+}
+.menu__starters__card__3, .menu__dishes__card__3, .menu__desserts__card__3 {
+  animation-delay: 3600ms;
+}
+
+/*MEDIA QUERIES*/
+/*Ecran moyen*/
 @media screen and (min-width: 600px) {
   .menu__starters, .menu__dishes, .menu__dessert {
     min-width: 45%;
     max-width: 48%;
   }
 }
+/*Grand écran*/
 @media screen and (min-width: 900px) {
   .menu__starters, .menu__dishes, .menu__dessert {
     min-width: 30%;
   }
 }
-/*TRES PETIT ECRAN*/
+/*Très petit écran*/
 @media screen and (max-width: 350px) {
   .menu {
     margin-top: 15rem;
