@@ -559,6 +559,9 @@ a {
 .menu__starters__card__3, .menu__dishes__card__3, .menu__desserts__card__3 {
   animation-delay: 3600ms;
 }
+.menu__starters__card__4, .menu__dishes__card__4, .menu__desserts__card__4 {
+  animation-delay: 3800ms;
+}
 
 /*MEDIA QUERIES*/
 /*Ecran moyen*/
