@@ -37,17 +37,17 @@
     &__list {
         z-index: 2;
         & li {
-        font-size: .8rem;
-        display: block;
-        width: 1.2rem;
-        height: 1.2rem;
-        padding-top: .2rem;
-        text-align: center;
-        background: $primary;
-        border-radius: 5rem;
-        margin: 1.5rem -.6rem 2.9rem 0;
-        color: $white;
-        font-weight: 500;
+            font-size: .8rem;
+            display: block;
+            width: 1.2rem;
+            height: 1.2rem;
+            padding-top: .2rem;
+            text-align: center;
+            background: $primary;
+            border-radius: 5rem;
+            margin: 1.5rem -.6rem 2.9rem 0;
+            color: $white;
+            font-weight: 500;
         }
     }
     &__container {
@@ -103,18 +103,17 @@
 
 /*Section restaurants*/
 #restaurants {
-    padding: 1.5rem 1rem;
+    padding: 1.5rem .5rem;
     background-color: $grey;
 }
 
 /*Card*/
-.card {
+.card-welcome {
     display: flex;
     flex-direction: column;
     background-color: $white;
     border-radius: 1rem;
-    margin: 1rem 0;
-    width: 30rem;
+    margin: 1rem .5rem;
     @include box_shadow;
     &__photo {
         height: 10rem;
@@ -151,5 +150,28 @@
                 border-radius: .2rem;
             }
         }
+    }
+}
+
+@media screen and (min-width: 600px) {
+    #restaurants {
+        display: flex;
+        flex-wrap: wrap;
+        & h2 {
+            min-width: 100%;
+        }
+    }
+
+    .card-welcome {
+        margin: .5rem .5rem;
+        min-width: 45%;
+        flex: 1;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .card-welcome {
+        min-width: 22%;
+        flex: 1;
     }
 }

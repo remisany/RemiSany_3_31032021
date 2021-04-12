@@ -319,37 +319,36 @@ a {
 
 /*Section restaurants*/
 #restaurants {
-  padding: 1.5rem 1rem;
+  padding: 1.5rem 0.5rem;
   background-color: #F2F2F2;
 }
 
 /*Card*/
-.card {
+.card-welcome {
   display: flex;
   flex-direction: column;
   background-color: #FFF;
   border-radius: 1rem;
-  margin: 1rem 0;
-  width: 30rem;
+  margin: 1rem 0.5rem;
   box-shadow: 0.2rem 0.2rem #ededed;
 }
-.card__photo {
+.card-welcome__photo {
   height: 10rem;
   object-fit: cover;
   border-radius: 1rem 1rem 0 0;
 }
-.card__content {
+.card-welcome__content {
   padding: 1rem;
   display: flex;
   height: 5rem;
 }
-.card__content__text {
+.card-welcome__content__text {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   flex: 1;
 }
-.card__content__icon {
+.card-welcome__content__icon {
   align-self: center;
   margin-right: 1rem;
   height: 1.4rem;
@@ -357,10 +356,10 @@ a {
   background: url("../Images/icons/heart.svg") center center no-repeat;
   transition: background 800ms ease-in;
 }
-.card__content__icon:hover {
+.card-welcome__content__icon:hover {
   background: url("../Images/icons/heart_solid.svg") center center no-repeat;
 }
-.card__content__icon__new::before {
+.card-welcome__content__icon__new::before {
   content: "Nouveau";
   display: block;
   text-align: center;
@@ -376,6 +375,27 @@ a {
   border-radius: 0.2rem;
 }
 
+@media screen and (min-width: 600px) {
+  #restaurants {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #restaurants h2 {
+    min-width: 100%;
+  }
+
+  .card-welcome {
+    margin: 0.5rem 0.5rem;
+    min-width: 45%;
+    flex: 1;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .card-welcome {
+    min-width: 22%;
+    flex: 1;
+  }
+}
 /*section photo */
 #photo {
   display: block;
@@ -389,13 +409,17 @@ a {
   border-radius: 2rem 2rem 0 0;
   padding: 1rem;
   background-color: #F2F2F2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .menu__title {
+  width: 100%;
   display: flex;
   justify-content: space-between;
 }
 .menu__title__text {
-  margin: 0.5rem 0;
+  margin: 0.5rem 0 1rem 1rem;
   font-family: "Shrikhand";
   font-size: 1.6rem;
 }
@@ -409,13 +433,18 @@ a {
 .menu__title__icon:hover {
   background: url("../Images/icons/heart_solid.svg") center center no-repeat;
 }
+.menu__starters, .menu__dishes, .menu__dessert {
+  min-width: 100%;
+  flex: 1;
+  margin: 0.5rem 1rem;
+}
 .menu__starters__title, .menu__dishes__title, .menu__dessert__title {
-  margin: 1.8rem 0 0.8rem 0;
   padding: 0.2rem 0;
   width: 2.5rem;
   border-bottom: 0.2rem solid #99E2D0;
 }
 .menu__order {
+  min-width: 100%;
   text-align: center;
 }
 .menu__order__button {
@@ -433,6 +462,95 @@ a {
 }
 .menu__order__button:hover {
   background-color: #ff46cc;
+}
+
+.card-menu {
+  padding: 1rem 0 1rem 1rem;
+  margin: 1rem 0;
+  background-color: #FFF;
+  border-radius: 1rem;
+  display: flex;
+  overflow: hidden;
+  max-width: 30rem;
+}
+.card-menu__text {
+  width: 90%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  transition: all 500ms ease-in-out;
+}
+.card-menu__text h3, .card-menu__text p {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: all 500ms ease-in-out;
+}
+.card-menu__price {
+  width: 3rem;
+  min-height: 100%;
+  margin: 0 2rem 0 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  transition: all 500ms ease-in-out;
+}
+.card-menu__icon {
+  margin: -1rem -4.5rem -1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4.5rem;
+  min-height: 100%;
+  background-color: #99E2D0;
+  transition: all 500ms ease-in-out;
+}
+.card-menu__icon__img {
+  background-color: #99E2D0;
+  width: 1.8rem;
+  height: 1.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 500ms ease-in-out;
+}
+.card-menu:hover .card-menu__text {
+  width: 80%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.card-menu:hover .card-menu__text h3, .card-menu:hover .card-menu__text p {
+  width: 80%;
+}
+.card-menu:hover .card-menu__price {
+  transform: translate(-4.5rem);
+}
+.card-menu:hover .card-menu__icon {
+  transform: translate(-4.5rem);
+}
+.card-menu:hover .card-menu__icon__img {
+  transform: rotate(360deg);
+}
+
+@media screen and (min-width: 600px) {
+  .menu__starters, .menu__dishes, .menu__dessert {
+    min-width: 45%;
+    max-width: 48%;
+  }
+}
+@media screen and (min-width: 900px) {
+  .menu__starters, .menu__dishes, .menu__dessert {
+    min-width: 30%;
+  }
+}
+/*TRES PETIT ECRAN*/
+@media screen and (max-width: 350px) {
+  .menu {
+    margin-top: 15rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
