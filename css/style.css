@@ -167,6 +167,7 @@ a {
 
 /*Footer*/
 .footer {
+  position: relative;
   display: flex;
   flex-direction: column;
   padding: 0.9rem;
@@ -180,29 +181,6 @@ a {
   font-size: 0.9rem;
   transition: color 300ms ease-in;
 }
-.footer__link__one::before, .footer__link__two::before {
-  content: "";
-  display: inline-block;
-  width: 1.5rem;
-  height: 1rem;
-  margin-left: -0.25rem;
-  margin-bottom: -0.2rem;
-  margin-right: 0.25rem;
-}
-.footer__link__one::before {
-  transition: background 300ms ease-in;
-  background: url("../Images/icons/utensils_g.svg") center center no-repeat;
-}
-.footer__link__one:hover::before {
-  background: url("../Images/icons/utensils_p.svg") center center no-repeat;
-}
-.footer__link__two::before {
-  transition: background 300ms ease-in;
-  background: url("../Images/icons/hands_g.svg") center center no-repeat;
-}
-.footer__link__two:hover::before {
-  background: url("../Images/icons/hands_p.svg") center center no-repeat;
-}
 .footer__link:hover {
   transition: color 300ms;
   color: #c9abee;
@@ -211,6 +189,16 @@ a {
   font-family: "Shrikhand";
   margin-bottom: 0.6rem;
   font-size: 1rem;
+}
+
+.fa-utensils {
+  margin-right: 0.4rem;
+  font-size: 1rem;
+}
+
+.fa-hands-helping {
+  margin-right: 0.1rem;
+  font-size: 0.9rem;
 }
 
 /*Section location*/
@@ -407,10 +395,15 @@ a {
   }
 }
 /*section photo */
-#photo {
+.photo {
   display: block;
   position: absolute;
   top: 3.5rem;
+}
+.photo__img {
+  object-fit: cover;
+  max-height: 50rem;
+  width: 100%;
 }
 
 .menu {

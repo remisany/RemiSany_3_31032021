@@ -1,5 +1,6 @@
 /*Footer*/
 .footer {
+    position: relative;
     display: flex;
     flex-direction: column;
     padding: .9rem;
@@ -11,37 +12,24 @@
         font-weight: 500;
         font-size: .9rem;
         transition: color 300ms ease-in;
-        &__one::before, &__two::before {
-            @include insert_before;
-            margin-bottom: -.2rem;
-            margin-right: .25rem;
-        }
-        &__one {
-            &::before {
-                @include transition_background_regular;
-                background: url("../Images/icons/utensils_g.svg") center center no-repeat;
-            }
-            &:hover::before {
-                background: url("../Images/icons/utensils_p.svg") center center no-repeat;
-            }
-        }
-        &__two {
-            &::before {
-                @include transition_background_regular;
-                background: url("../Images/icons/hands_g.svg") center center no-repeat;
-            }
-            &:hover::before {
-                background: url("../Images/icons/hands_p.svg") center center no-repeat;
-            }
-        }
         &:hover {
             transition: color 300ms;
             color: lighten($primary, 20%);
         }
-    }
+    } 
     &__title {
         font-family: "Shrikhand";
         margin-bottom: .6rem;
         font-size: 1rem;
     }
+}
+
+.fa-utensils {
+    margin-right: .4rem;
+    font-size: 1rem;
+}
+
+.fa-hands-helping {
+    margin-right: .1rem;
+    font-size: .9rem;
 }
