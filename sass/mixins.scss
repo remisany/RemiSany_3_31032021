@@ -12,17 +12,12 @@
     margin-left: -.25rem;
 }
 
-/*TRANSITION*/
-@mixin transition_background_regular {
-    transition: background 300ms ease-in;
-}
-
 /*INSERTION ICON COEUR*/
 @mixin heart {
     height: 1.4rem;
     width: 1.4rem; 
     background: url("../Images/icons/heart.svg") center center no-repeat;
-    transition: background 800ms ease-in;
+    transition: all 800ms ease-in;
     &:hover {
         background: url("../Images/icons/heart_solid.svg") center center no-repeat;
     }
