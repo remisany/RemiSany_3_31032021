@@ -1,6 +1,5 @@
 /*OMBRE*/
 /*INSERTION ICONS*/
-/*TRANSITION*/
 /*INSERTION ICON COEUR*/
 /*BOUTON*/
 /*LOADING*/
@@ -87,7 +86,7 @@ body {
 }
 
 /*TITRES*/
-h2, h3, h4, h5, h6 {
+h2, h3 {
   font-weight: 700;
   font-size: 1.2rem;
 }
@@ -112,7 +111,7 @@ a {
   color: black;
 }
 
-/*LOADINS*/
+/*LOADING*/
 .loading {
   position: fixed;
   top: 0;
@@ -219,15 +218,15 @@ a {
 }
 
 /*SECTION LOCATION*/
-#location {
+.location {
   text-align: center;
   background-color: #e8e8e8;
   padding: 1rem 0;
 }
-#location__text {
+.location__text {
   font-weight: 500;
 }
-#location__text:before {
+.location__text:before {
   content: "";
   display: inline-block;
   width: 1.5rem;
@@ -342,7 +341,7 @@ a {
   height: 1.4rem;
   width: 1.4rem;
   background: url("../Images/icons/heart.svg") center center no-repeat;
-  transition: background 800ms ease-in;
+  transition: all 800ms ease-in;
 }
 .card-welcome__content__icon:hover {
   background: url("../Images/icons/heart_solid.svg") center center no-repeat;
@@ -395,11 +394,12 @@ a {
   display: block;
   position: absolute;
   top: 3.5rem;
+  min-width: 100%;
 }
 .photo__img {
   object-fit: cover;
   max-height: 50rem;
-  width: 100%;
+  min-width: 100%;
 }
 
 /*SECTION MENU*/
@@ -428,7 +428,7 @@ a {
   height: 1.4rem;
   width: 1.4rem;
   background: url("../Images/icons/heart.svg") center center no-repeat;
-  transition: background 800ms ease-in;
+  transition: all 800ms ease-in;
 }
 .menu__title__icon:hover {
   background: url("../Images/icons/heart_solid.svg") center center no-repeat;
