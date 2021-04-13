@@ -115,6 +115,7 @@
     border-radius: 1rem;
     margin: 1rem .5rem;
     @include box_shadow;
+    transition: all 500ms ease-in-out;
     &__photo {
         height: 10rem;
         object-fit: cover;
@@ -150,6 +151,9 @@
                 border-radius: .2rem;
             }
         }
+    }
+    &:hover {
+        transform: scale(1.02);
     }
 }
 

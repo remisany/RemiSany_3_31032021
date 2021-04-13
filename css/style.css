@@ -329,6 +329,7 @@ a {
   border-radius: 1rem;
   margin: 1rem 0.5rem;
   box-shadow: 0.2rem 0.2rem #ededed;
+  transition: all 500ms ease-in-out;
 }
 .card-welcome__photo {
   height: 10rem;
@@ -371,6 +372,9 @@ a {
   font-size: 0.8rem;
   font-weight: 500;
   border-radius: 0.2rem;
+}
+.card-welcome:hover {
+  transform: scale(1.02);
 }
 
 @media screen and (min-width: 600px) {
