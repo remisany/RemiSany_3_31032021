@@ -1,4 +1,4 @@
-/*section photo */
+/*SECTION PHOTO*/
 .photo {
     display: block;
     position: absolute;
@@ -9,7 +9,8 @@
         width: 100%;
     }
 }
- 
+
+/*SECTION MENU*/
 .menu {
     position: relative;
     margin-top: 18rem;
@@ -56,6 +57,7 @@
     }
 }
 
+/*CARD MENU*/
 .card-menu {
     opacity: 0;
     padding: 1rem 0 1rem 1rem;
@@ -152,7 +154,7 @@
 }
 
 /*MEDIA QUERIES*/
-/*Ecran moyen*/
+/*ECRAN MOYEN*/
 @media screen and (min-width: 600px) {
     .menu {
         &__starters, &__dishes, &__dessert {
@@ -162,7 +164,7 @@
     }
 }
 
-/*Grand écran*/
+/*GRAND ECRAN*/
 @media screen and (min-width: 900px) {
     .menu {
         &__starters, &__dishes, &__dessert {
@@ -171,7 +173,7 @@
     }
 }
 
-/*Très petit écran*/
+/*TRES PETIT ECRAN*/
 @media screen and (max-width: 350px) {
     .menu {
         margin-top: 15rem;

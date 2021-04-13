@@ -1,7 +1,9 @@
+/*OMBRE*/
 @mixin box_shadow {
     box-shadow: .2rem .2rem darken($grey, 2%);
 }
 
+/*INSERTION ICONS*/
 @mixin insert_before {
     content: '';
     display: inline-block;
@@ -10,10 +12,12 @@
     margin-left: -.25rem;
 }
 
+/*TRANSITION*/
 @mixin transition_background_regular {
     transition: background 300ms ease-in;
 }
 
+/*INSERTION ICON COEUR*/
 @mixin heart {
     height: 1.4rem;
     width: 1.4rem; 
@@ -24,6 +28,7 @@
     }
 }
 
+/*BOUTON*/
 @mixin linear_button {
     margin-top: 1rem;
     padding: .8rem 1rem;

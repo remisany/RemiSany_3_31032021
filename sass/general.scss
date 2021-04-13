@@ -8,7 +8,7 @@ $tertiary: #99E2D0;
 $grey: #F2F2F2;
 $white: #FFF;
 
-/*Fonts*/
+/*FONTS*/
 * {
     font-family: "Roboto", sans-serif;
     font-size: 15px;
@@ -19,13 +19,13 @@ body {
     margin-top: 3.5rem;
 }
 
-/*Titles*/
+/*TITRES*/
 h2,h3,h4,h5,h6 {
     font-weight: 700;
     font-size: 1.2rem;
 }
 
-/*Buttons*/
+/*BOUTONS*/
 button {
     border: none;
     @include box_shadow;
@@ -34,14 +34,14 @@ button {
     cursor: pointer;
 }
 
-/*Links*/
+/*LIENS*/
 a {
     text-decoration: none;
     cursor: pointer;
     color: black;
 }
 
-/*Loading*/
+/*LOADINS*/
 .loading {
     position: fixed;
     top: 0;

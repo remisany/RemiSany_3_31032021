@@ -1,11 +1,16 @@
-@charset "UTF-8";
-/*Keyframes*/
+/*OMBRE*/
+/*INSERTION ICONS*/
+/*TRANSITION*/
+/*INSERTION ICON COEUR*/
+/*BOUTON*/
+/*LOADING*/
 @keyframes loading {
   100% {
     opacity: 0;
     z-index: -100;
   }
 }
+/*LOADING BARS*/
 @keyframes bars {
   0% {
     transform: scaleY(0.5);
@@ -14,6 +19,7 @@
     transform: scaleY(1);
   }
 }
+/*APPARITION CARD*/
 @keyframes appearance {
   0% {
     opacity: 0;
@@ -69,7 +75,7 @@ td, th {
 }
 
 /*Colors*/
-/*Fonts*/
+/*FONTS*/
 * {
   font-family: "Roboto", sans-serif;
   font-size: 15px;
@@ -80,13 +86,13 @@ body {
   margin-top: 3.5rem;
 }
 
-/*Titles*/
+/*TITRES*/
 h2, h3, h4, h5, h6 {
   font-weight: 700;
   font-size: 1.2rem;
 }
 
-/*Buttons*/
+/*BOUTONS*/
 button {
   border: none;
   box-shadow: 0.2rem 0.2rem #ededed;
@@ -95,14 +101,14 @@ button {
   cursor: pointer;
 }
 
-/*Links*/
+/*LIENS*/
 a {
   text-decoration: none;
   cursor: pointer;
   color: black;
 }
 
-/*Loading*/
+/*LOADINS*/
 .loading {
   position: fixed;
   top: 0;
@@ -137,6 +143,7 @@ a {
   animation-delay: 400ms;
 }
 
+/*HEADER*/
 .header {
   display: block;
   position: absolute;
@@ -165,7 +172,7 @@ a {
   left: 1rem;
 }
 
-/*Footer*/
+/*FOOTER*/
 .footer {
   position: relative;
   display: flex;
@@ -191,6 +198,7 @@ a {
   font-size: 1rem;
 }
 
+/*ICONS*/
 .fa-utensils {
   margin-right: 0.4rem;
   font-size: 1rem;
@@ -201,7 +209,7 @@ a {
   font-size: 0.9rem;
 }
 
-/*Section location*/
+/*SECTION LOCATION*/
 #location {
   text-align: center;
   background-color: #e8e8e8;
@@ -221,7 +229,7 @@ a {
   background: url("../Images/icons/map.svg") center center no-repeat;
 }
 
-/*Section exploration*/
+/*SECTION EXPLORATION*/
 #exploration {
   padding: 1.5rem;
   text-align: center;
@@ -243,7 +251,7 @@ a {
   background-color: #ff46cc;
 }
 
-/*Section operation*/
+/*SECTION OPERATION*/
 #operation {
   padding: 1.5rem 1rem 0 1rem;
 }
@@ -315,13 +323,13 @@ a {
   background-color: #f2eafb;
 }
 
-/*Section restaurants*/
+/*SECTION RESTAURANT*/
 #restaurants {
   padding: 1.5rem 0.5rem;
   background-color: #F2F2F2;
 }
 
-/*Card*/
+/*CARD WELCOME*/
 .card-welcome {
   display: flex;
   flex-direction: column;
@@ -377,6 +385,8 @@ a {
   transform: scale(1.02);
 }
 
+/*MEDIA QUERIES*/
+/*ECRAN MOYEN*/
 @media screen and (min-width: 600px) {
   #restaurants {
     display: flex;
@@ -392,13 +402,14 @@ a {
     flex: 1;
   }
 }
+/*GRAND ECRAN*/
 @media screen and (min-width: 1000px) {
   .card-welcome {
     min-width: 22%;
     flex: 1;
   }
 }
-/*section photo */
+/*SECTION PHOTO*/
 .photo {
   display: block;
   position: absolute;
@@ -410,6 +421,7 @@ a {
   width: 100%;
 }
 
+/*SECTION MENU*/
 .menu {
   position: relative;
   margin-top: 18rem;
@@ -471,6 +483,7 @@ a {
   background-color: #ff46cc;
 }
 
+/*CARD MENU*/
 .card-menu {
   opacity: 0;
   padding: 1rem 0 1rem 1rem;
@@ -561,20 +574,20 @@ a {
 }
 
 /*MEDIA QUERIES*/
-/*Ecran moyen*/
+/*ECRAN MOYEN*/
 @media screen and (min-width: 600px) {
   .menu__starters, .menu__dishes, .menu__dessert {
     min-width: 45%;
     max-width: 48%;
   }
 }
-/*Grand écran*/
+/*GRAND ECRAN*/
 @media screen and (min-width: 900px) {
   .menu__starters, .menu__dishes, .menu__dessert {
     min-width: 30%;
   }
 }
-/*Très petit écran*/
+/*TRES PETIT ECRAN*/
 @media screen and (max-width: 350px) {
   .menu {
     margin-top: 15rem;

@@ -1,4 +1,4 @@
-/*Section location*/
+/*SECTION LOCATION*/
 #location {
     text-align: center;
     background-color: darken($grey, 4%);
@@ -14,7 +14,7 @@
     }
 }
 
-/*Section exploration*/
+/*SECTION EXPLORATION*/
 #exploration {
     padding: 1.5rem;
     text-align: center;
@@ -27,7 +27,7 @@
     }
 }
 
-/*Section operation*/
+/*SECTION OPERATION*/
 #operation {
     padding: 1.5rem 1rem 0 1rem;
 }
@@ -101,13 +101,13 @@
     }
 }
 
-/*Section restaurants*/
+/*SECTION RESTAURANT*/
 #restaurants {
     padding: 1.5rem .5rem;
     background-color: $grey;
 }
 
-/*Card*/
+/*CARD WELCOME*/
 .card-welcome {
     display: flex;
     flex-direction: column;
@@ -157,6 +157,8 @@
     }
 }
 
+/*MEDIA QUERIES*/
+/*ECRAN MOYEN*/
 @media screen and (min-width: 600px) {
     #restaurants {
         display: flex;
@@ -173,6 +175,7 @@
     }
 }
 
+/*GRAND ECRAN*/
 @media screen and (min-width: 1000px) {
     .card-welcome {
         min-width: 22%;

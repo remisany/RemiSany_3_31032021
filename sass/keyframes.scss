@@ -1,4 +1,4 @@
-/*Keyframes*/
+/*LOADING*/
 @keyframes loading {
     100% {
         opacity: 0;
@@ -6,6 +6,7 @@
     }
 }
 
+/*LOADING BARS*/
 @keyframes bars {
     0% {
         transform: scaleY(0.5);     
@@ -15,6 +16,7 @@
     }
 }
 
+/*APPARITION CARD*/
 @keyframes appearance {
     0% {
         opacity: 0;
