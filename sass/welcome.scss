@@ -28,74 +28,44 @@
 }
 
 /*SECTION OPERATION*/
-#operation {
-    padding: 1.5rem 1rem 0 1rem;
-}
-
 .operation {
-    display: flex;
-    &__list {
-        z-index: 2;
-        & li {
-            font-size: .8rem;
-            display: block;
-            width: 1.2rem;
-            height: 1.2rem;
-            padding-top: .2rem;
-            text-align: center;
-            background: $primary;
-            border-radius: 5rem;
-            margin: 1.5rem -.6rem 2.9rem 0;
-            color: $white;
-            font-weight: 500;
-        }
-    }
+    padding: 1.5rem 1rem;
     &__container {
-        flex: 1;
         display: flex;
         flex-direction: column;
+        align-items: flex-start;
         &__button {
+            display: flex;
+            width: 100%;
             text-align: start;
             padding: 1rem 1rem 1rem 2rem;
             margin: .5rem 0;
             border-radius: 1rem;
             background-color: lighten($grey, 3%);
-            @include transition_background_regular;
-            &::before {
-                @include insert_before;
-                margin-bottom: -.15rem;
-                margin-right: 1rem;
+            transition: all 400ms ease-in-out;
+            &__index {
+                width: 1.2rem;
+                height: 1.2rem;
+                text-align: center;
+                border-radius: 1rem;
+                color: white;
+                font-size: .8rem;
+                font-weight: 500;
+                background-color: $primary;
+                margin: auto 2rem auto -2.5rem;
+                padding-top: .15rem;
             }
-            &__one {
-                &::before {
-                    @include transition_background_regular;
-                    background: url("../Images/icons/mobile_g.svg") center center no-repeat;
-                }
-                &:hover::before {
-                    background: url("../Images/icons/mobile_p.svg") center center no-repeat;
-                }
-            }
-            &__two {
-                &::before {
-                    @include transition_background_regular;
-                    background: url("../Images/icons/list_g.svg") center center no-repeat;
-                }
-                &:hover::before {
-                    background: url("../Images/icons/list_p.svg") center center no-repeat;
-                }
-            }
-            &__three {
-                &::before {
-                    @include transition_background_regular;
-                    margin-bottom: -.2rem;
-                    background: url("../Images/icons/store_g.svg") center center no-repeat;
-                }
-                &:hover::before {
-                    background: url("../Images/icons/store_p.svg") center center no-repeat;
-                }
+            & i {
+                width: 2.5rem;
+                color: darken($grey , 70%);
+                transition: all 400ms ease-in-out;
             }
             &:hover {
                 background-color: lighten($primary, 35%);
+                color: $primary;
+                & i {
+                    color: $primary;
+                }
             }
         }
     }
@@ -115,7 +85,7 @@
     border-radius: 1rem;
     margin: 1rem .5rem;
     @include box_shadow;
-    transition: all 500ms ease-in-out;
+    transition: all 400ms ease-in-out;
     &__photo {
         height: 10rem;
         object-fit: cover;

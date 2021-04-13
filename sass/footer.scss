@@ -11,9 +11,14 @@
         margin: .2rem 0;
         font-weight: 500;
         font-size: .9rem;
-        transition: color 300ms ease-in;
+        transition: all 400ms ease-in-out;
+        &__container {
+            display: flex;
+            & i {
+                width: 1.5rem;
+            }
+        }
         &:hover {
-            transition: color 300ms;
             color: lighten($primary, 20%);
         }
     } 
@@ -26,11 +31,11 @@
 
 /*ICONS*/
 .fa-utensils {
-    margin-right: .4rem;
+    margin-top: .05rem;
     font-size: 1rem;
 }
 
 .fa-hands-helping {
-    margin-right: .1rem;
+    margin-top: .1rem;
     font-size: .9rem;
 }

@@ -92,6 +92,10 @@ h2, h3, h4, h5, h6 {
   font-size: 1.2rem;
 }
 
+h2 {
+  padding-bottom: 1rem;
+}
+
 /*BOUTONS*/
 button {
   border: none;
@@ -186,10 +190,15 @@ a {
   margin: 0.2rem 0;
   font-weight: 500;
   font-size: 0.9rem;
-  transition: color 300ms ease-in;
+  transition: all 400ms ease-in-out;
+}
+.footer__link__container {
+  display: flex;
+}
+.footer__link__container i {
+  width: 1.5rem;
 }
 .footer__link:hover {
-  transition: color 300ms;
   color: #c9abee;
 }
 .footer__title {
@@ -200,12 +209,12 @@ a {
 
 /*ICONS*/
 .fa-utensils {
-  margin-right: 0.4rem;
+  margin-top: 0.05rem;
   font-size: 1rem;
 }
 
 .fa-hands-helping {
-  margin-right: 0.1rem;
+  margin-top: 0.1rem;
   font-size: 0.9rem;
 }
 
@@ -252,75 +261,47 @@ a {
 }
 
 /*SECTION OPERATION*/
-#operation {
-  padding: 1.5rem 1rem 0 1rem;
-}
-
 .operation {
-  display: flex;
-}
-.operation__list {
-  z-index: 2;
-}
-.operation__list li {
-  font-size: 0.8rem;
-  display: block;
-  width: 1.2rem;
-  height: 1.2rem;
-  padding-top: 0.2rem;
-  text-align: center;
-  background: #9356DC;
-  border-radius: 5rem;
-  margin: 1.5rem -0.6rem 2.9rem 0;
-  color: #FFF;
-  font-weight: 500;
+  padding: 1.5rem 1rem;
 }
 .operation__container {
-  flex: 1;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 }
 .operation__container__button {
+  display: flex;
+  width: 100%;
   text-align: start;
   padding: 1rem 1rem 1rem 2rem;
   margin: 0.5rem 0;
   border-radius: 1rem;
   background-color: #fafafa;
-  transition: background 300ms ease-in;
+  transition: all 400ms ease-in-out;
 }
-.operation__container__button::before {
-  content: "";
-  display: inline-block;
-  width: 1.5rem;
-  height: 1rem;
-  margin-left: -0.25rem;
-  margin-bottom: -0.15rem;
-  margin-right: 1rem;
+.operation__container__button__index {
+  width: 1.2rem;
+  height: 1.2rem;
+  text-align: center;
+  border-radius: 1rem;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 500;
+  background-color: #9356DC;
+  margin: auto 2rem auto -2.5rem;
+  padding-top: 0.15rem;
 }
-.operation__container__button__one::before {
-  transition: background 300ms ease-in;
-  background: url("../Images/icons/mobile_g.svg") center center no-repeat;
-}
-.operation__container__button__one:hover::before {
-  background: url("../Images/icons/mobile_p.svg") center center no-repeat;
-}
-.operation__container__button__two::before {
-  transition: background 300ms ease-in;
-  background: url("../Images/icons/list_g.svg") center center no-repeat;
-}
-.operation__container__button__two:hover::before {
-  background: url("../Images/icons/list_p.svg") center center no-repeat;
-}
-.operation__container__button__three::before {
-  transition: background 300ms ease-in;
-  margin-bottom: -0.2rem;
-  background: url("../Images/icons/store_g.svg") center center no-repeat;
-}
-.operation__container__button__three:hover::before {
-  background: url("../Images/icons/store_p.svg") center center no-repeat;
+.operation__container__button i {
+  width: 2.5rem;
+  color: #404040;
+  transition: all 400ms ease-in-out;
 }
 .operation__container__button:hover {
   background-color: #f2eafb;
+  color: #9356DC;
+}
+.operation__container__button:hover i {
+  color: #9356DC;
 }
 
 /*SECTION RESTAURANT*/
@@ -337,7 +318,7 @@ a {
   border-radius: 1rem;
   margin: 1rem 0.5rem;
   box-shadow: 0.2rem 0.2rem #ededed;
-  transition: all 500ms ease-in-out;
+  transition: all 400ms ease-in-out;
 }
 .card-welcome__photo {
   height: 10rem;
