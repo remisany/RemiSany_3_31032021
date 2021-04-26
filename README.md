@@ -4,8 +4,8 @@
 ### CONTEXTE
 
 #### Intégrer les maquettes en HTML et CSS :
-- Maquette mobile fournie (approche mobile-first).
-- Adaptation desktop et tablette libre (supports non prioritaire).
+- Maquettse mobiles fournies (approche mobile-first).
+- Adaptation desktop et tablette libre (supports non prioritaires).
 
 #### Contraintes :
 - Pas d'utilisation de framework ni de Javascript.
@@ -18,7 +18,7 @@
 
 ##### Page d'accueil :
 - Affichage de la localisation des restaurants.
-- Présence d'un section contenant les quatre menus. Au clic sur une la carte, l'utilisateur est redirigé vers la page du menu.
+- Présence d'une section contenant les quatre menus. Au clic sur la carte, l'utilisateur est redirigé vers la page du menu.
 
 ##### Page menu :
 - Quatre pages contenant chacune le menu d'un restaurant.
@@ -35,14 +35,14 @@
 
 ###### Boutons :
 - Changement d'apparence au survol.
-- Bouton "j'aime" en forme de coeur. Au survol, il devra se remplir progressivement.
+- Boutons "j'aime" en forme de coeur. Au survol, il devra se remplir progressivement.
 
 ###### Page d'accueil :
-- Un Loading spinner devra appararaitre pendant 1 à 3 secondes (animations CSS, pas de librairie). Celui-ci doit être cohérent avec la charte graphique du site.
+- Un "loading spinner" devra apparaître pendant 1 à 3 secondes (animations CSS, pas de librairie). Celui-ci doit être cohérent avec la charte graphique du site.
 
 ###### Pages menu :
 - Apparition progressive des plats.
-- Apparition d'une coche à la selection d'un plat. Apparition de droite vers la gauche. Si l'intitulé du plat est trop, celui-ci doit être rogné avec des points de suspensions.
+- Apparition d'une coche à la selection d'un plat. Apparition de droite vers la gauche. Si l'intitulé du plat est trop grande, celui-ci doit être rogné avec des points de suspension.
 
 
 ### TECHNOLOGIES UTILISÉES
@@ -58,5 +58,5 @@
 ### LIENS GITHUB PAGES
 https://remisany.github.io/RemiSany_3_31032021/index.html
 
-Projet validé le X avril 2021.
+Projet validé le 26 avril 2021.
 
