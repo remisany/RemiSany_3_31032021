@@ -30,9 +30,10 @@
     color: $white;
     border-radius: 2rem;
     background-color: $secondary;
-    transition: background-color 300ms ease-in;
-    background-image: linear-gradient(-15deg, $primary, rgba(255,255,255,0));
+    transition: all 400ms ease-in;
+    background-image: linear-gradient(-15deg, darken($primary, 10%), rgba(255,255,255,0));
     &:hover {
-        background-color: darken($secondary,10%);
+        background-color: lighten($secondary,10%);
+        box-shadow: .2rem .2rem darken($grey, 20%);
     }
 }

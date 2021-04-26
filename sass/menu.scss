@@ -138,18 +138,18 @@
 /*APPARITION CARD*/
 .menu {
     &__starters__card, &__dishes__card, &__desserts__card {
-        animation: appearance 1s forwards ease-in-out ;
+        animation: appearance 1.4s forwards ease-in-out ;
         &__1 {
-            animation-delay: 3200ms;
+            animation-delay: 200ms;
         }
         &__2 {
-            animation-delay: 3400ms;
+            animation-delay: 400ms;
         }
         &__3 {
-            animation-delay: 3600ms;
+            animation-delay: 600ms;
         }
         &__4 {
-            animation-delay: 3800ms;
+            animation-delay: 800ms;
         }
     }
 }
